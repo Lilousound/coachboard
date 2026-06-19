@@ -7,11 +7,12 @@ type ClientsState = {
   addClient: (client: Member) => void
   updateClient: (id: string, updates: Partial<Member>) => void
   archiveClient: (id: string) => void
+  getClientById: (id: string) => Member | undefined
 }
 
 export const useClientsStore = create<ClientsState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       clients: [],
 
       addClient: (client) =>
@@ -32,6 +33,8 @@ export const useClientsStore = create<ClientsState>()(
             c.id === id ? { ...c, active: false } : c,
           ),
         })),
+
+      getClientById: (id) => get().clients.find((c) => c.id === id),
     }),
     { name: 'coachboard-clients' },
   ),

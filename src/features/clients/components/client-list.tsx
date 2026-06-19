@@ -31,6 +31,7 @@ function ClientList() {
       {clients.map((client) => (
         <ClientCard
           key={client.id}
+          id={client.id}
           name={`${client.firstname} ${client.lastname}`}
           phone={client.phone}
           email={client.email}
