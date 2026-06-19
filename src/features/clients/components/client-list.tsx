@@ -1,41 +1,42 @@
+'use client'
+
+import { useClientsStore } from '@/store/useClientsStore'
 import ClientCard from './client-card'
 
 function ClientList() {
-  const clients = [
-    {
-      id: 1,
-      FirstName: 'Seb',
-      LastName: 'Gea',
-      phone: '1234567890',
-      email: 'seb.gea@example.com',
-    },
-    {
-      id: 2,
-      FirstName: 'Jane',
-      LastName: 'Smith',
-      phone: '0987654321',
-      email: 'jane.smith@example.com',
-    },
-    {
-      id: 3,
-      FirstName: 'Bob',
-      LastName: 'Johnson',
-      phone: '1122334455',
-      email: 'bob.johnson@example.com',
-    },
-  ]
-
+  const clients = useClientsStore((state) => state.clients)
+  const addClient = useClientsStore((state) => state.addClient)
   return (
     <main className="flex flex-col col-auto items-center justify-center mt-5">
       <p>Client List</p>
       {clients.map((client) => (
         <ClientCard
           key={client.id}
-          name={`${client.FirstName} ${client.LastName}`}
+          name={`${client.firstname} ${client.lastname}`}
           phone={client.phone}
           email={client.email}
+          level={client.level}
+          registrationDate={client.registrationDate}
         />
       ))}
+
+      <button
+        onClick={() =>
+          addClient({
+            id: crypto.randomUUID(),
+            lastname: 'Gea',
+            firstname: 'Seb',
+            email: 'seb@example.com',
+            phone: '0600000000',
+            level: 'intermediaire',
+            registrationDate: new Date().toISOString(),
+            notes: '',
+            actif: true,
+          })
+        }
+      >
+        Ajouter un client test
+      </button>
     </main>
   )
 }
