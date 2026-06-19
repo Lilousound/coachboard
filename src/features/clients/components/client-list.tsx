@@ -31,7 +31,7 @@ function ClientList() {
             level: 'intermediaire',
             registrationDate: new Date().toISOString(),
             notes: '',
-            actif: true,
+            active: true,
           })
         }
       >

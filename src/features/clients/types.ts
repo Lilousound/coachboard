@@ -1,4 +1,4 @@
-export type Niveau = 'debutant' | 'intermediaire' | 'avance'
+export type Level = 'debutant' | 'intermediaire' | 'avance'
 
 export type Member = {
   id: string
@@ -6,7 +6,7 @@ export type Member = {
   firstname: string
   email: string
   phone: string
-  level: Niveau
+  level: Level
   registrationDate: string
   notes: string
   active: boolean
