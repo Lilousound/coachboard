@@ -1,4 +1,4 @@
-export type Level = 'debutant' | 'intermediaire' | 'avance'
+export type Level = 'beginner' | 'intermediate' | 'advanced'
 
 export type Member = {
   id: string
