@@ -4,8 +4,8 @@ import StatsCard from '@/features/dashboard/components/stats-card'
 
 function Dashboard() {
   return (
-    <main className="flex flex-col col-auto min-h-screen items-center justify-center border-2 border-gray-300 rounded-lg p-8 m-8">
-      <h1 className="text-4xl font-bold text-center pb-6">Bonjour John Doe</h1>
+    <main className="flex flex-col col-auto border-2 border-gray-300 rounded-lg p-8 m-8 text-gray-700">
+      <h1 className="text-4xl font-bold pb-6">Bonjour John Doe</h1>
       <h2 className="text-4xl font-bold text-center pb-6">DASHBOARD</h2>
 
       <div className="flex flex-row gap-8 items-center justify-center">

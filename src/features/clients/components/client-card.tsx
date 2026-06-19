@@ -3,20 +3,25 @@ import Link from 'next/link'
 function ClientCard({
   id,
   name,
-  phone,
-  email,
+  level,
+  registrationDate,
+  notes,
 }: {
   id: string
   name: string
   phone: string
   email: string
+  level: string
+  registrationDate: string
+  notes: string
 }) {
   return (
     <Link href={`/clients/${id}`}>
-      <main className="flex col-auto items-center justify-center mt-5 border-2 border-gray-300 rounded-lg p-8 m-8 gap-5 hover:bg-gray-50 cursor-pointer">
+      <main className="flex col-auto items-center justify-center text-white bg-sky-600 rounded-3xl p-8 m-8 gap-4 mt-6 border-2 border-white/10 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-[#1d33b3]/30 hover:scale-[1.01]">
         <p className="font-bold">{name}</p>
-        <p>{phone}</p>
-        <p>{email}</p>
+        <p>{level}</p>
+        <p>{new Date(registrationDate).toLocaleDateString('fr-FR')}</p>
+        <p>{notes || 'Aucune note'}</p>
       </main>
     </Link>
   )
