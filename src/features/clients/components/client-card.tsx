@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Level } from '../types'
 
 function ClientCard({
   id,
@@ -9,9 +10,7 @@ function ClientCard({
 }: {
   id: string
   name: string
-  phone: string
-  email: string
-  level: string
+  level: Level
   registrationDate: string
   notes: string
 }) {

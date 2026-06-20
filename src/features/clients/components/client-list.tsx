@@ -33,8 +33,6 @@ function ClientList() {
           key={client.id}
           id={client.id}
           name={`${client.firstname} ${client.lastname}`}
-          phone={client.phone}
-          email={client.email}
           level={client.level}
           registrationDate={client.registrationDate}
           notes={client.notes}
