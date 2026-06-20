@@ -1,9 +1,10 @@
 import ClientDetail from '@/features/clients/components/client-detail'
 
-export default function ClientDetailPage({
+export default async function ClientDetailPage({
   params,
 }: {
-  params: { id: string } //Next.js remplit automatiquement cet objet params en se basant sur le nom du dossier [id]
+  params: Promise<{ id: string }>
 }) {
-  return <ClientDetail id={params.id} />
+  const { id } = await params
+  return <ClientDetail id={id} />
 }
