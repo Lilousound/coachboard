@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Member, Level } from '../types'
 import Input from '@/components/ui/input'
 import Button from '@/components/ui/button'
+import Card from '@/components/ui/card'
 
 type ClientFormProps = {
   initialData?: Member // Données initiales pour l'édition d'un membre
@@ -40,48 +41,52 @@ function ClientForm({ initialData, onSubmit }: ClientFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
-      <Input
-        label="Prénom"
-        value={firstname}
-        onChange={setFirstname}
-        required
-      />
-      <Input label="Nom" value={lastname} onChange={setLastname} required />
-      <Input
-        label="Email"
-        value={email}
-        onChange={setEmail}
-        type="email"
-        required
-      />
-      <Input label="Téléphone" value={phone} onChange={setPhone} />
+    <main className="flex flex-col items-center mt-6 gap-4">
+      <Card className="w-full max-w-md">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-75">
+          <Input
+            label="Prénom"
+            value={firstname}
+            onChange={setFirstname}
+            required
+          />
+          <Input label="Nom" value={lastname} onChange={setLastname} required />
+          <Input
+            label="Email"
+            value={email}
+            onChange={setEmail}
+            type="email"
+            required
+          />
+          <Input label="Téléphone" value={phone} onChange={setPhone} />
 
-      <label className="flex flex-col gap-1 text-sm">
-        <span className="font-medium">Niveau</span>
-        <select
-          value={level}
-          onChange={(e) => setLevel(e.target.value as Level)} // pour choisir un niveau dans la liste déroulante depuis les options disponibles Level
-          className="border border-gray-300 rounded-md px-3 py-2"
-        >
-          <option value="beginner">Débutant</option>
-          <option value="intermediate">Intermédiaire</option>
-          <option value="advanced">Avancé</option>
-        </select>
-      </label>
+          <label className="flex flex-col gap-1 text-sm">
+            <span className="font-medium">Niveau</span>
+            <select
+              value={level}
+              onChange={(e) => setLevel(e.target.value as Level)} // pour choisir un niveau dans la liste déroulante depuis les options disponibles Level
+              className="border border-gray-300 rounded-md px-3 py-2"
+            >
+              <option value="beginner">Débutant</option>
+              <option value="intermediate">Intermédiaire</option>
+              <option value="advanced">Avancé</option>
+            </select>
+          </label>
 
-      <label className="flex flex-col gap-1 text-sm">
-        <span className="font-medium">Notes</span>
-        <textarea
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2"
-          rows={3}
-        />
-      </label>
+          <label className="flex flex-col gap-1 text-sm">
+            <span className="font-medium">Notes</span>
+            <textarea
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="border border-gray-300 rounded-md px-3 py-2"
+              rows={3}
+            />
+          </label>
 
-      <Button type="submit">Enregistrer</Button>
-    </form>
+          <Button type="submit">Enregistrer</Button>
+        </form>
+      </Card>
+    </main>
   )
 }
 

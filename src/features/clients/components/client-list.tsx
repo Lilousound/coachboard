@@ -12,13 +12,18 @@ function ClientList() {
   const [showForm, setShowForm] = useState(false) //affiche ou masque le formulaire d'ajout de client
 
   return (
-    <main className="flex flex-col col-auto items-center justify-center mt-5 gap-4">
-      <p>Client List</p>
-
-      <Button onClick={() => setShowForm(!showForm)}>
-        {showForm ? 'Annuler' : 'Ajouter un client'}
-      </Button>
-
+    <main className="m-5">
+      <div className="flex flex-row items-center justify-between gap-4">
+        <div>
+          <p className="text-main-500 text-sm">
+            {clients.length} CLIENTS ACTIFS
+          </p>
+          <h1 className="text-4xl font-bold text-main-900">Tes clients</h1>
+        </div>
+        <Button onClick={() => setShowForm(!showForm)}>
+          {showForm ? 'Annuler' : ' + Ajouter un client'}
+        </Button>
+      </div>
       {showForm && ( // Affiche le formulaire d'ajout de client si showForm est vrai
         <ClientForm
           onSubmit={(member) => {
@@ -28,16 +33,18 @@ function ClientList() {
         />
       )}
 
-      {clients.map((client) => (
-        <ClientCard
-          key={client.id}
-          id={client.id}
-          name={`${client.firstname} ${client.lastname}`}
-          level={client.level}
-          registrationDate={client.registrationDate}
-          notes={client.notes}
-        />
-      ))}
+      <div className="flex flex-row row-auto items-center justify-center mt-5 gap-4">
+        {clients.map((client) => (
+          <ClientCard
+            key={client.id}
+            id={client.id}
+            name={`${client.firstname} ${client.lastname}`}
+            level={client.level}
+            registrationDate={client.registrationDate}
+            notes={client.notes}
+          />
+        ))}
+      </div>
     </main>
   )
 }

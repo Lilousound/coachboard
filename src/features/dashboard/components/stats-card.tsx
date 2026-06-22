@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import Card from '@/components/ui/card'
 
 function StatsCard() {
   return (
-    <div className="flex flex-col col-auto items-center justify-center text-white bg-main-500 rounded-3xl p-8 m-8 gap-4 mt-6 border-2 border-white/10 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-[#1d33b3]/30 hover:scale-[1.01]">
+    <Card>
       <h3 className="text-4xl font-bold text-center pb-6 ">Stats</h3>
       <Link href="/clients">
         <p className="cursor-pointer">Nombre de clients : 10</p>
@@ -13,7 +14,7 @@ function StatsCard() {
       <Link href="/invoices">
         <p className="cursor-pointer">Factures à éditer : 2</p>
       </Link>
-    </div>
+    </Card>
   )
 }
 

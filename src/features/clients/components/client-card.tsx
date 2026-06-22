@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { Level } from '../types'
+import Card from '@/components/ui/card'
+import { CircleUser } from 'lucide-react'
 
 function ClientCard({
   id,
@@ -16,12 +18,26 @@ function ClientCard({
 }) {
   return (
     <Link href={`/clients/${id}`}>
-      <main className="flex col-auto items-center justify-center text-white bg-sky-600 rounded-3xl p-8 m-8 gap-4 mt-6 border-2 border-white/10 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-[#1d33b3]/30 hover:scale-[1.01]">
-        <p className="font-bold">{name}</p>
-        <p>{level}</p>
-        <p>{new Date(registrationDate).toLocaleDateString('fr-FR')}</p>
-        <p>{notes || 'Aucune note'}</p>
-      </main>
+      <Card className="w-96 flex flex-col col-auto items-start justify-start gap-4 p-6">
+        <div className="flex flex-row items-center gap-4">
+          <CircleUser size={40} strokeWidth={1.75} />
+          <div>
+            <p className="font-bold">{name}</p>
+            <p className="text-sm text-gray-500">
+              Inscrit•e le{' '}
+              {new Date(registrationDate).toLocaleDateString('fr-FR')}
+            </p>
+          </div>
+        </div>
+
+        <div className="">
+          <p className="text-sm bg-main-500 text-white px-1.5 py-0.5 rounded-lg inline-block mb-2">
+            {level}
+          </p>
+
+          <p>{notes || 'Aucune note'}</p>
+        </div>
+      </Card>
     </Link>
   )
 }

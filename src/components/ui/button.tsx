@@ -11,11 +11,11 @@ function Button({
   type = 'button',
   variant = 'primary',
 }: ButtonProps) {
-  const baseStyles = 'px-4 py-2 rounded-md font-medium transition-colors'
+  const baseStyles = 'px-4 py-2 rounded-4xl font-medium transition-colors'
   const variantStyles =
     variant === 'primary'
-      ? 'bg-blue-600 text-white hover:bg-blue-700'
-      : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+      ? 'bg-main-600 text-white hover:bg-main-700'
+      : 'bg-main-200 text-gray-800 hover:bg-main-300'
 
   return (
     <button
