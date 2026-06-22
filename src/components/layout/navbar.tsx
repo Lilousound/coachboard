@@ -17,7 +17,7 @@ function Navbar() {
             Clients
           </Link>
           <Link href="/sessions" className="text-xl">
-            Sessions
+            Séances
           </Link>
           <Link href="/planning" className="text-xl">
             Calendrier

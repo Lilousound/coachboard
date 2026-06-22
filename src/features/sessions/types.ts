@@ -18,6 +18,6 @@ export type Session = {
   duration: number
   type: SessionType
   location: string
-  description: string
+  comments: string
   memberId: string
 }

@@ -8,7 +8,7 @@ function Dashboard() {
       <h1 className="text-4xl font-bold pb-6">Bonjour John Doe</h1>
       <h2 className="text-4xl font-bold text-center pb-6">DASHBOARD</h2>
 
-      <div className="flex flex-row gap-8 items-center justify-center">
+      <div className="flex flex-row gap-2 items-center justify-center">
         <StatsCard />
         <UpcomingSessions />
         <RecentSessions />
