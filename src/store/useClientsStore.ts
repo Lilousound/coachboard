@@ -7,6 +7,7 @@ type ClientsState = {
   addClient: (client: Member) => void
   updateClient: (id: string, updates: Partial<Member>) => void
   archiveClient: (id: string) => void
+  unArchiveClient: (id: string) => void
   getClientById: (id: string) => Member | undefined
 }
 
@@ -31,6 +32,13 @@ export const useClientsStore = create<ClientsState>()(
         set((state) => ({
           clients: state.clients.map((c) =>
             c.id === id ? { ...c, active: false } : c,
+          ),
+        })),
+
+      unArchiveClient: (id) =>
+        set((state) => ({
+          clients: state.clients.map((c) =>
+            c.id === id ? { ...c, active: true } : c,
           ),
         })),
 

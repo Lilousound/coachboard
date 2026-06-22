@@ -3,7 +3,7 @@ import { ClipboardPen } from 'lucide-react'
 
 function Navbar() {
   return (
-    <nav className=" text-main-500 p-4 border-b border-main-500/30">
+    <nav className=" text-main-600 p-4 border-b border-main-500/30">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <ClipboardPen size={30} />

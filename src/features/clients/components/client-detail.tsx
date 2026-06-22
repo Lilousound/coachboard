@@ -13,6 +13,7 @@ function ClientDetail({ id }: { id: string }) {
   const client = useClientsStore((state) => state.getClientById(id)) // Récupère le client correspondant à l'ID fourni
   const updateClient = useClientsStore((state) => state.updateClient) // Récupère la fonction pour mettre à jour un client
   const archiveClient = useClientsStore((state) => state.archiveClient) // Récupère la fonction pour archiver un client
+  const unArchiveClient = useClientsStore((state) => state.unArchiveClient) // Récupère la fonction pour désarchiver un client
   const [isEditing, setIsEditing] = useState(false) // État local pour gérer l'affichage du formulaire de modification
 
   if (!client) {
@@ -22,7 +23,7 @@ function ClientDetail({ id }: { id: string }) {
   if (isEditing) {
     // Si l'utilisateur est en mode édition, affiche le formulaire de modification avec champs préremplis (grâce à initialData)
     return (
-      <main className="flex flex-col items-centermt-10 gap-4">
+      <main className="flex flex-col items-center mt-10 gap-4">
         <ClientForm
           initialData={client}
           onSubmit={(updatedMember) => {
@@ -68,6 +69,17 @@ function ClientDetail({ id }: { id: string }) {
               }}
             >
               Archiver
+            </Button>
+          )}
+          {!client.active && ( // Affiche le bouton "Désarchiver" uniquement si le client n'est plus actif
+            <Button
+              variant="secondary"
+              onClick={() => {
+                unArchiveClient(client.id) // Appelle la fonction d'archivage du client dans le store
+                router.push('/clients') // Redirige l'utilisateur vers la liste des clients après l'archivage
+              }}
+            >
+              Désarchiver
             </Button>
           )}
         </div>
