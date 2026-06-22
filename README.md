@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ CoachBoard
 
-## Getting Started
+**A management dashboard for professional sports coaches, built with Next.js, TypeScript, and Tailwind CSS.**
 
-First, run the development server:
+_Work in Progress – Currently building the core features, starting with client management!_
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+CoachBoard helps independent sports coaches manage their daily activity: clients, training sessions, attendance, and progress tracking. All in one simple tool, replacing paper notebooks or scattered spreadsheets. Built as a portfolio project to demonstrate real-world frontend architecture, TypeScript modeling, and state management.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 **Live Demo** _(coming soon)_
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ **Technologies Used**
 
-## Learn More
+| Technology       | Purpose                                                       |
+| ---------------- | ------------------------------------------------------------- |
+| **Next.js**      | React framework with App Router for file-based routing.       |
+| **TypeScript**   | Strict typing of domain data (members, sessions, attendance). |
+| **Tailwind CSS** | Utility-first styling for a fast, consistent design system.   |
+| **Zustand**      | Lightweight state management shared across pages.             |
+| **localStorage** | Client-side data persistence (no backend for V1).             |
+| **Vercel**       | Hosting for deployment.                                       |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 **Design & UX Choices**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **Clean, focused dashboard**
 
-## Deploy on Vercel
+- **Light theme** with a custom teal/cyan accent palette, built as reusable Tailwind design tokens.
+- **Card-based layout** to organize clients, sessions, and stats at a glance.
+- **Subtle hover effects and transitions** for a polished, professional feel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **User Flow**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Dashboard** showing key stats and recent/upcoming sessions at a glance.
+2. **Client list** with quick access to each client's full profile.
+3. **Client detail page** to view, edit, or archive a member.
+4. **Session management** (in progress) to plan and track training sessions.
+5. **Attendance tracking** (planned) to check off present members per session.
+
+### **Why This Design?**
+
+- Built for a **real professional workflow**, not a generic CRUD demo: a coach managing several clients across different disciplines (running, crossfit, weight management, strength training, etc.).
+- **Feature-based architecture**: each domain (clients, sessions, attendance, planning) is self-contained with its own components, hooks, and types.
+- **Type-safe data modeling**: clear relationships between Members, Sessions, and Attendance, designed to scale toward a real backend later.
+
+---
+
+## 🎯 **Features**
+
+### ✅ **Current Features**
+
+- Add, edit, and archive clients (members).
+- Client detail page with full profile view.
+- Persistent data storage via localStorage (Zustand + persist middleware).
+- Reusable UI components (buttons, inputs, cards).
+- Custom design system with a dedicated color palette.
+
+### 🚀 **Upcoming Features (Work in Progress)**
+
+- **Sessions module**: create, edit, and list training sessions (date, time, duration, type, location), linked to clients.
+- **Attendance module**: quick checklist to mark present/absent members per session.
+- **Stats dashboard**: monthly attendance rate, session count, most active members.
+- **Export/Import**: download and re-upload data as a JSON file (backup without a backend).
+- **Planning view**: calendar overview of upcoming sessions.
+- Polished responsive design for mobile and tablet.
+- Dark mode.
+
+---
+
+## 💡 **Why This Project?**
+
+### **Learning Goals**
+
+- Practice **Next.js App Router**: file-based routing, dynamic routes, Server vs Client Components.
+- Master **TypeScript** for modeling real business entities and their relationships.
+- Learn **state management with Zustand**, including persistence across sessions.
+- Build a **consistent design system** with Tailwind CSS v4 custom theme tokens.
+- Think through **data architecture** before adding a real backend (localStorage now, Supabase as a possible next step).
+
+### **Challenges Tackled**
+
+- **Data modeling**: defining clear relationships between Members, Sessions, and Attendance from the start.
+- **State persistence**: keeping client-side data reliable across page reloads without a backend.
+- **Dynamic routing**: handling Next.js 15+ async `params` for client detail pages.
+- **Design consistency**: building a reusable color palette and UI components instead of hardcoded one-off styles.
+
+---
+
+## 📢 Contribution & Feedback
+
+This project is open source! Contributions and feedback are welcome:
+
+Suggestions: New features, UI improvements, or bug fixes. Issues: Open an issue or contact me directly.
+
+---
+
+## 📧 Get in Touch
+
+Have questions, suggestions, or just want to chat about the project? I'd love to hear from you! 😊
+
+📩 Email me at: aurelieraout@gmail.com Whether it’s feedback, collaboration ideas, or even a friendly "hello," don’t hesitate to reach out!
