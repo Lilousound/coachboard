@@ -19,7 +19,7 @@ function Navbar() {
           <Link href="/sessions" className="text-xl">
             Séances
           </Link>
-          <Link href="/planning" className="text-xl">
+          <Link href="/" className="text-xl">
             Calendrier
           </Link>
         </div>

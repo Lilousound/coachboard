@@ -21,7 +21,7 @@ function StatsCard() {
             </p>
           </div>
         </Link>
-        <Link href="/upcoming-sessions">
+        <Link href="/sessions">
           <div className="flex flex-row gap-2 items-center ">
             <CalendarDays size={30} />
             <p className="cursor-pointer">
@@ -29,7 +29,7 @@ function StatsCard() {
             </p>
           </div>
         </Link>
-        <Link href="/invoices">
+        <Link href="/">
           <div className="flex flex-row gap-2 items-center ">
             <ReceiptEuro size={30} />
             <p className="cursor-pointer">
