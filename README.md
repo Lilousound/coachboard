@@ -6,7 +6,7 @@ _Work in Progress – Currently building the core features, starting with client
 
 CoachBoard helps independent sports coaches manage their daily activity: clients, training sessions, attendance, and progress tracking. All in one simple tool, replacing paper notebooks or scattered spreadsheets. Built as a portfolio project to demonstrate real-world frontend architecture, TypeScript modeling, and state management.
 
-🔗 **Live Demo** _(coming soon)_
+🔗 **[Live Demo](https://coachboard-pied.vercel.app/)** (Hosted on Vercel)
 
 ---
 
